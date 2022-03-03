@@ -1,5 +1,18 @@
+p, .link {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 300;
+  text-decoration: none;
+}
+
 .App {
   text-align: center;
+  background-color: #0b1426;
+  min-height: 100vh;
+}
+
+.App > .container {
+  width: 960px;
 }
 
 .App-logo {

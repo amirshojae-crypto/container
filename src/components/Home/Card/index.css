@@ -1,0 +1,18 @@
+.container {
+  background-color: rgba(17,153,255,.1);
+  transition: 0.3s ease-in-out background-color;
+  padding: 0 24px;
+  height: 66px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container:hover {
+  background-color: rgba(17,153,255,.7);
+  cursor: pointer;
+}
+
+.container .item {
+  width: 160px
+}
