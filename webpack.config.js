@@ -3,8 +3,6 @@ const { ModuleFederationPlugin } = require('webpack').container;
 const path = require('path');
 const deps = require('./package.json').dependencies;
 
-const path = require('path');
-
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   console.log({ isProduction });
