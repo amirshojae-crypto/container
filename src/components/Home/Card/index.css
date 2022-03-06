@@ -10,7 +10,6 @@
 
 .container:hover {
   background-color: rgba(17,153,255,.7);
-  cursor: pointer;
 }
 
 .container .item {

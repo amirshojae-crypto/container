@@ -16,7 +16,7 @@ const Home: React.FC = () => {
       <h1>Trending</h1>
       {
         trendingCryptos.map((tc: CardProps) => (
-          <Card {...tc} style={{ marginBottom: '16px' }} />
+          <Card key={tc.instrument} {...tc} style={{ marginBottom: '16px' }} />
         ))
       }
     </div>

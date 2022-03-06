@@ -3,14 +3,24 @@ const webpack = require('webpack'); // only add this if you don't have yet
 const { ModuleFederationPlugin } = webpack.container;
 const deps = require('./package.json').dependencies;
 
+const path = require('path');
+
 module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
   console.log({ isProduction });
   return {
     entry: './src/index.ts',
     mode: process.env.NODE_ENV || 'development',
+    output: {
+      publicPath: '/',
+    },
     devServer: {
       port: 3000,
+      historyApiFallback: true,
+      static: {
+        directory: path.join(__dirname, "public")
+      },
+      hot: true
     },
     resolve: {
       extensions: ['.ts', '.tsx', '.js'],
@@ -37,9 +47,7 @@ module.exports = (env, argv) => {
       new ModuleFederationPlugin({
         name: 'container',
         remotes: {
-          position: 'position@http://localhost:3001/remoteEntry.js',
           orderbook: 'orderbook@http://localhost:3002/remoteEntry.js',
-          candlestick: 'candlestick@http://localhost:3003/remoteEntry.js',
         },
         shared: {
           ...deps,

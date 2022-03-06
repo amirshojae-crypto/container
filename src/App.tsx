@@ -7,8 +7,6 @@ import { CircularProgress, Container } from '@mui/material';
 import './App.css';
 import { SnackbarProvider } from 'notistack';
 
-const Position = React.lazy(() => import('position/App'));
-const CandleStick = React.lazy(() => import('candlestick/App'));
 const Orderbook = React.lazy(() => import('orderbook/App'));
 
 function App() {
@@ -18,9 +16,9 @@ function App() {
         <Navigation />
         <Container maxWidth="md">
           <Routes>
-            <Route path='/order-book' element={
+            <Route path='/order-book/:crypto' element={
               <React.Suspense fallback={<CircularProgress />}>
-                <Orderbook text="amir" />
+                <Orderbook />
               </React.Suspense>
             } />
             <Route path="/" element={<Home />} />

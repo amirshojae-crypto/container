@@ -15,9 +15,12 @@ const Button: React.FC<ButtonProps> = ({ onClick, text, type }) => {
       height: '28px',
       width: '80px',
       border: '0',
-      color: 'white'
+      color: 'white',
+      cursor: 'pointer'
     }}
-      type='button'>
+      type='button'
+      onClick={onClick}
+    >
       {text}
     </button>
   )

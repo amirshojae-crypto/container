@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({
       <p style={{ color: percentageChange > 0 ? 'green' : 'red', width: '150px' }}>{percentageChange.toFixed(2)}%</p>
       <svg style={{ width: '150px' }} data-v-278ecb10="" data-test="spark-line" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="50" className="e-spark-line spark-line"><polyline points={chartPoints} stroke="#24a0f5" stroke-width="2" stroke-linecap="round" fill="none" className="polyline"></polyline></svg>
       <Button type='submit' text='Trade' onClick={() => {
-        history.push('/candle-stick')
+        history.push(`/order-book/${instrument.replace('/', '_')}`)
       }} />
     </div>
   )
