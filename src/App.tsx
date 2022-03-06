@@ -17,7 +17,9 @@ function App() {
         <Routes>
           <Route path='/order-book/:crypto' element={
             <React.Suspense fallback={<CircularProgress />}>
-              <Orderbook />
+              <div style={{ height: 'calc(100vh - 100px)' }}>
+                <Orderbook />
+              </div>
             </React.Suspense>
           } />
           <Route path="/" element={
