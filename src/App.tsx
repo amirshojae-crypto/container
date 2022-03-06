@@ -14,16 +14,18 @@ function App() {
     <SnackbarProvider maxSnack={3}>
       <div className="App">
         <Navigation />
-        <Container maxWidth="md">
-          <Routes>
-            <Route path='/order-book/:crypto' element={
-              <React.Suspense fallback={<CircularProgress />}>
-                <Orderbook />
-              </React.Suspense>
-            } />
-            <Route path="/" element={<Home />} />
-          </Routes>
-        </Container>
+        <Routes>
+          <Route path='/order-book/:crypto' element={
+            <React.Suspense fallback={<CircularProgress />}>
+              <Orderbook />
+            </React.Suspense>
+          } />
+          <Route path="/" element={
+            <Container maxWidth="md">
+              <Home />
+            </Container>
+          } />
+        </Routes>
       </div >
     </SnackbarProvider>
   );
